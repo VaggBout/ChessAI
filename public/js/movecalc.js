@@ -1,12 +1,6 @@
-//random move func
-var randomMove = function() {
-    var possibleMoves = game.moves();
-    var randomIndex = Math.floor(Math.random() * possibleMoves.length);
-    return possibleMoves[randomIndex];
-};
 
 var evaluateBoard = function(board, color) {
-    // Sets a value for each piece. Check https://en.wikipedia.org/wiki/Chess_piece_relative_value. Different values from link so we wont deal with floating numbers
+    // Sets a value for each piece. Check https://en.wikipedia.org/wiki/Chess_piece_relative_value. Different values from link so we wont deal with floating numbers.
     var pieceValue = {
         'p': 100,
         'n': 350,
@@ -42,8 +36,8 @@ var calcBestMove = function(depth, game, playerColor,
         return [value, null]
     }
 
-    // Recursive case: search possible moves
-    var bestMove = null; // best move not set yet
+    // search possible moves
+    var bestMove = null;
     var possibleMoves = game.moves();
     // Set random order for possible moves
     possibleMoves.sort(function(a, b){return 0.5 - Math.random()});
